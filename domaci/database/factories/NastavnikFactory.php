@@ -17,7 +17,10 @@ class NastavnikFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'ime' => $this->faker->name(),
+            'brojTelefona' => $this->faker->phoneNumber(),
+            'godineIskustva' => $this->faker->numberBetween($min = 1, $max = 30),
+            'email' => $this->faker->unique()->safeEmail()
         ];
     }
 }
