@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Ocena;
 
 class Jezik extends Model
 {
@@ -11,4 +12,11 @@ class Jezik extends Model
     protected $table='jeziks';
 
     public $primaryKey='id';
+
+    public function ocena() {
+        return $this->hasMany(Ocena::class);
+    }
+    protected $fillable = [
+        'naziv',
+    ];
 }

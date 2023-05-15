@@ -10,10 +10,11 @@ class JezikCollection extends ResourceCollection
     /**
      * Transform the resource collection into an array.
      *
-     * @return array<int|string, mixed>
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public static $wrap = 'jeziks'; 
-    public function toArray(Request $request): array
+    public function toArray($request): array
     {
         return parent::toArray($request);
     }
